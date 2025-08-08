@@ -27,6 +27,11 @@ const userSchema = new mongoose.Schema({
     image: {
         type: String,
         maxlength: 255
+    },
+    role: {
+        type: String,
+        enum: ['user', 'admin'],
+        default: 'user'
     }
 }, {
     timestamps: true
