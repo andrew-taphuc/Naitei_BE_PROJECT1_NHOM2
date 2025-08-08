@@ -1,6 +1,6 @@
 const express = require('express');
-const mongoose = require('mongoose');
 const cors = require('cors');
+const { connectDB, setupConnectionListeners } = require('./src/config/database');
 require('dotenv').config();
 
 const app = express();
@@ -11,29 +11,9 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Kết nối MongoDB
-const connectDB = async () => {
-    try {
-        await mongoose.connect(process.env.MONGODB_URI);
-        console.log('Kết nối MongoDB thành công');
-    } catch (error) {
-        console.error('Lỗi kết nối MongoDB:', error.message);
-        process.exit(1);
-    }
-};
-
+// Kết nối MongoDB và thiết lập event listeners
 connectDB();
-
-// Event listeners cho MongoDB connection
-mongoose.connection.on('connected', () => {
-    console.log('Mongoose đã kết nối tới MongoDB');
-});
-mongoose.connection.on('error', (err) => {
-    console.error('Lỗi kết nối Mongoose:', err);
-});
-mongoose.connection.on('disconnected', () => {
-    console.log('Mongoose đã ngắt kết nối');
-});
+setupConnectionListeners();
 
 // Start server
 const server = app.listen(PORT, (err) => {
