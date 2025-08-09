@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const { connectDB, setupConnectionListeners } = require('./src/config/database');
 require('dotenv').config();
+const apiRoutes = require('./src/routes/api');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -15,6 +16,7 @@ app.use(express.urlencoded({ extended: true }));
 connectDB();
 setupConnectionListeners();
 
+app.use(apiRoutes);
 // Start server
 const server = app.listen(PORT, (err) => {
     if (err) {
