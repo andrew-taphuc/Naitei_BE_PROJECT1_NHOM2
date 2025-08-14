@@ -15,4 +15,11 @@ exports.authMiddleware = (req, res, next) => {
   }
 };
 
+exports.requireAdmin = (req, res, next) => {
+  if (!req.user || req.user.role !== 'admin') {
+    return res.status(403).json({ message: 'Không có quyền' });
+  }
+  next();
+};
+
 
