@@ -10,9 +10,6 @@ const mapProduct = (p, categoryName = '') => ({
   discount: p.discount,
   description: p.description,
   images: (p.images || []).map(i => i.url),
-  variants: (p.variants || []).map(v => ({
-    id: v._id, name: v.name, price: v.price, inStock: v.in_stock, color: v.color, type: v.type
-  })),
   specifications: p.specifications,
   rating: p.rating,
   reviewCount: p.review_count,
@@ -32,7 +29,6 @@ exports.create = async (req, res) => {
       discount,
       description,
       images,
-      variants,
       specifications,
       inStock,
       careInstructions,
@@ -55,15 +51,6 @@ exports.create = async (req, res) => {
       ? images.map(i => typeof i === 'string' ? { url: i } : { url: i.url, is_primary: !!i.is_primary })
       : [];
 
-    const normalizedVariants = Array.isArray(variants)
-      ? variants.map(v => ({
-          name: v.name,
-          price: Number(v.price) || 0,
-          in_stock: v.in_stock !== undefined ? Number(v.in_stock) : Number(v.inStock || 0),
-          color: v.color,
-          type: v.type
-        }))
-      : [];
 
     const productDoc = {
       name,
@@ -72,7 +59,7 @@ exports.create = async (req, res) => {
       discount: discount !== undefined ? Number(discount) : 0,
       description,
       images: normalizedImages,
-      variants: normalizedVariants,
+      
       specifications: specifications && typeof specifications === 'object' ? specifications : undefined,
       in_stock: inStock !== undefined ? !!inStock : undefined,
       care_instructions: careInstructions,
@@ -165,7 +152,6 @@ exports.update = async (req, res) => {
       discount,
       description,
       images,
-      variants,
       specifications,
       inStock,
       careInstructions,
@@ -190,17 +176,7 @@ exports.update = async (req, res) => {
         : [];
     }
 
-    if (variants !== undefined) {
-      updateDoc.variants = Array.isArray(variants)
-        ? variants.map(v => ({
-            name: v.name,
-            price: Number(v.price) || 0,
-            in_stock: v.in_stock !== undefined ? Number(v.in_stock) : Number(v.inStock || 0),
-            color: v.color,
-            type: v.type
-          }))
-        : [];
-    }
+    
 
     if (specifications !== undefined) {
       updateDoc.specifications = specifications && typeof specifications === 'object' ? specifications : undefined;
