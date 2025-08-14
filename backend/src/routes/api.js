@@ -12,7 +12,6 @@ const { bestSellers, promotions, newArrival } = require('../controllers/Product.
 
 const blogRoutes = require("./Blog.routes");
 const commentRoutes = require("./Comment.routes");
-const categoryRoutes = require("./Category.routes");
 const tagRoutes = require("./Tag.routes");
 
 
