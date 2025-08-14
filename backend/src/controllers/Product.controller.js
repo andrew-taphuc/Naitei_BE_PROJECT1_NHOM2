@@ -18,6 +18,7 @@ const mapProduct = (p, categoryName = '') => ({
   reviewCount: p.review_count,
   inStock: p.in_stock,
   newArrival: p.new_arrival,
+  newArival: p.new_arrival,
   type: p.tags ? p.tags.split(',').map(s => s.trim()) : []
 });
 
