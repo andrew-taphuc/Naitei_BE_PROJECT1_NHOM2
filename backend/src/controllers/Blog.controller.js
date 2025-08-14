@@ -1,6 +1,8 @@
 const Blog = require("../models/Blog");
 const Comment = require("../models/Comment");
 const Category = require("../models/Category");
+const { getTagIdByName, getTagNameById } = require("../utils/tagMappingSimple");
+const { objectIdToInt } = require("../utils/helpers");
 
 // Lấy danh sách blogs (có phân trang, lọc category, tag)
 exports.getAllBlogs = async (req, res) => {
@@ -16,19 +18,57 @@ exports.getAllBlogs = async (req, res) => {
       .skip((page - 1) * limit)
       .limit(Number(limit))
       .sort({ createdAt: -1 });
-    const total = await Blog.countDocuments(filter);
 
-    return res.status(200).json({
-      success: true,
-      message: "Blogs retrieved successfully",
-      data: {
-        blogs,
-        total,
-        page: Number(page),
-        limit: Number(limit),
-        totalPages: Math.ceil(total / limit),
-      },
-    });
+    // Transform to JSON server compatible format
+    const transformedBlogs = await Promise.all(
+      blogs.map(async (blog) => {
+        // Get comments for this blog
+        const comments = await Comment.find({ blog_id: blog._id })
+          .populate("user_id", "full_name")
+          .sort({ created_at: 1 });
+
+        const transformedComments = comments.map((comment) => ({
+          id: objectIdToInt(comment._id),
+          blogId: objectIdToInt(comment.blog_id),
+          userId: objectIdToInt(comment.user_id._id),
+          userName: comment.user_id.full_name,
+          content: comment.content,
+          date: comment.created_at
+            ? new Date(comment.created_at).toLocaleDateString("vi-VN")
+            : "",
+          replyTo: comment.reply_to
+            ? objectIdToInt(comment.reply_to)
+            : undefined,
+        }));
+
+        return {
+          id: objectIdToInt(blog._id),
+          title: blog.title,
+          description: blog.description,
+          contents: blog.contents,
+          images: blog.images,
+          categories: blog.categories.map((cat) => objectIdToInt(cat._id)),
+          tags: blog.tags
+            .map((tagName) => getTagIdByName(tagName))
+            .filter((id) => id !== null),
+          date: blog.createdAt
+            ? new Date(blog.createdAt).toLocaleDateString("vi-VN", {
+                weekday: "long",
+                year: "numeric",
+                month: "numeric",
+                day: "numeric",
+              })
+            : "",
+          created_at: blog.createdAt
+            ? new Date(blog.createdAt).toLocaleTimeString("vi-VN")
+            : "",
+          comments: transformedComments,
+        };
+      })
+    );
+
+    // Return as array for JSON server compatibility
+    return res.json(transformedBlogs);
   } catch (error) {
     console.error("Error fetching blogs:", error);
     return res.status(500).json({
@@ -52,11 +92,49 @@ exports.getBlog = async (req, res) => {
       });
     }
 
-    return res.status(200).json({
-      success: true,
-      message: "Blog retrieved successfully",
-      data: blog,
-    });
+    // Get comments for this blog
+    const comments = await Comment.find({ blog_id: blog._id })
+      .populate("user_id", "full_name")
+      .sort({ created_at: 1 });
+
+    const transformedComments = comments.map((comment) => ({
+      id: objectIdToInt(comment._id),
+      blogId: objectIdToInt(comment.blog_id),
+      userId: objectIdToInt(comment.user_id._id),
+      userName: comment.user_id.full_name,
+      content: comment.content,
+      date: comment.created_at
+        ? new Date(comment.created_at).toLocaleDateString("vi-VN")
+        : "",
+      replyTo: comment.reply_to ? objectIdToInt(comment.reply_to) : undefined,
+    }));
+
+    // Transform to JSON server compatible format
+    const transformedBlog = {
+      id: objectIdToInt(blog._id),
+      title: blog.title,
+      description: blog.description,
+      contents: blog.contents,
+      images: blog.images,
+      categories: blog.categories.map((cat) => objectIdToInt(cat._id)),
+      tags: blog.tags
+        .map((tagName) => getTagIdByName(tagName))
+        .filter((id) => id !== null),
+      date: blog.createdAt
+        ? new Date(blog.createdAt).toLocaleDateString("vi-VN", {
+            weekday: "long",
+            year: "numeric",
+            month: "numeric",
+            day: "numeric",
+          })
+        : "",
+      created_at: blog.createdAt
+        ? new Date(blog.createdAt).toLocaleTimeString("vi-VN")
+        : "",
+      comments: transformedComments,
+    };
+
+    return res.json(transformedBlog);
   } catch (error) {
     console.error("Error fetching blog:", error);
 
