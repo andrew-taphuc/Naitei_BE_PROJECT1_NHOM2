@@ -1,8 +1,11 @@
 const express = require('express');
-const { add } = require('../controllers/Wishlist.controller');
+const { list, add, remove } = require('../controllers/Wishlist.controller');
+const { authMiddleware } = require('../utils/jwt');
 const router = express.Router();
 
-router.post('/', add);
+router.get('/', authMiddleware, list);
+router.post('/', authMiddleware, add);
+router.delete('/:productId', authMiddleware, remove);
 
 module.exports = router;
 

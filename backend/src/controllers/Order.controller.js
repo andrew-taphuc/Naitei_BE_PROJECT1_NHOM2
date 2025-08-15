@@ -1,4 +1,6 @@
+
 const { Order, User, Product } = require('../models');
+
 const { v4: uuidv4 } = require('uuid'); 
 
 // Tạo 1 đơn hàng mới từ user
@@ -62,11 +64,12 @@ const createOrder = async (req, res) => {
       // Thêm vào processed items với thông tin đầy đủ
       processedItems.push({
         product_id: item.product_id,
-        product_name: item.name || 'Unknown Product',
+        name: item.name || product.name,
         price: item.price, // Giá gốc
         quantity: item.quantity,
         discount: itemDiscount,
-        image_url: item.image || item.image_url || product.images?.[0]?.url || ''
+        image: item.image || item.image || (product.images?.[0]?.url || '')
+
       });
     }
 
@@ -82,8 +85,8 @@ const createOrder = async (req, res) => {
       items: processedItems,
       total: Math.round(totalWithVAT * 100) / 100, // Total đã bao gồm VAT
       status: 'pending',
-      payment_method: payment_method || '',
-      shipping_address: shipping_address || '',
+      paymentMethod: payment_method || '',
+      shippingAddress: shipping_address || '',
       phone: phone || '',
       email: email || ''
     });
@@ -92,8 +95,17 @@ const createOrder = async (req, res) => {
       success: true,
       message: 'Order created successfully',
       data: {
-        ...order.toObject(),
-        item_count: processedItems.length
+        id: order._id,
+        userId: order.user_id,
+        items: order.items,
+        total: order.total,
+        status: order.status,
+        paymentMethod: order.paymentMethod,
+        shippingAddress: order.shippingAddress,
+        phone: order.phone,
+        email: order.email,
+        createdAt: order.createdAt,
+        updatedAt: order.updatedAt
       }
     });
     
@@ -297,16 +309,19 @@ const getAllOrders = async (req, res) => {
         const orders = await Order.find()
             .populate('user_id', 'full_name email phone')
             .sort({ createdAt: -1 }); // Sắp xếp theo ngày tạo mới 
-        if (orders.length === 0) {
-            return res.status(404).json({
-                success: false, 
-                message: 'No orders found'
-            });
-        }
-        return res.status(200).json({
-            success: true,
-            data: orders
-        });
+        return res.status(200).json(orders.map(o => ({
+          id: o._id,
+          userId: String(o.user_id),
+          items: o.items,
+          total: o.total,
+          status: o.status,
+          paymentMethod: o.payment_method,
+          shippingAddress: o.shipping_address,
+          phone: o.phone,
+          email: o.email,
+          createdAt: o.createdAt,
+          updatedAt: o.updatedAt
+        })));
     } catch (error) {
         console.error('Error fetching all orders:', error);
         return res.status(500).json({
