@@ -14,8 +14,8 @@ const {
 // Tạo đơn hàng mới
 router.post('/newOrder', createOrder);
 
-// Lấy đơn hàng theo ID
-router.get('/:orderId', getOrderById);
+// Lấy đơn hàng theo User ID
+router.get('/user/:userId', getOrderById);
 
 // Cập nhật đơn hàng (chỉ pending)
 router.put('/:orderId', updateOrder);

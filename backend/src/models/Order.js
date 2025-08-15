@@ -11,15 +11,13 @@ const orderSchema = new mongoose.Schema({
         required: true
     },
     items: [{
-        product_id: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Product'
-        },
-        product_name: String,
-        price: Number,
-        quantity: Number,
-        discount: Number,
-        image_url: String
+        // Align with frontend OrderItem shape
+        product_id: { type: String, required: true },
+        name: { type: String, required: true },
+        price: { type: Number, required: true },
+        quantity: { type: Number, required: true },
+        discount: { type: Number, default: 0 },
+        image: { type: String, default: '' }
     }],
     total: {
         type: Number,

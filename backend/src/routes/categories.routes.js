@@ -4,7 +4,7 @@ const { authMiddleware, requireAdmin } = require('../utils/jwt');
 const router = express.Router();
 
 router.get('/', list);
-router.post('/', authMiddleware, requireAdmin, create);
+router.post('/', create);
 
 module.exports = router;
 
