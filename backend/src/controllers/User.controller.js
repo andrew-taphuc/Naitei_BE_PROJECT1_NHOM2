@@ -65,7 +65,17 @@ exports.list = async (_req, res) => {
     const users = await User.find().select(
       "_id full_name email phone address image role"
     );
-    res.json(users.map(mapUser));
+    res.json(
+      users.map((u) => ({
+        id: u._id.toString(),
+        fullName: u.full_name,
+        email: u.email,
+        phone: u.phone || "",
+        address: u.address || "",
+        image: u.image || "",
+        role: u.role,
+      }))
+    );
   } catch (e) {
     res.status(500).json({ message: "Server error" });
   }
