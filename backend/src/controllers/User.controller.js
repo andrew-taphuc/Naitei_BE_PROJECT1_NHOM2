@@ -1,5 +1,6 @@
 const User = require("../models/User");
 const { objectIdToInt } = require("../utils/helpers");
+const bcrypt = require("bcrypt");
 
 // Mapping function for JSON server compatibility
 const mapUserToJSONServerFormat = (user) => {
@@ -65,17 +66,7 @@ exports.list = async (_req, res) => {
     const users = await User.find().select(
       "_id full_name email phone address image role"
     );
-    res.json(
-      users.map((u) => ({
-        id: u._id.toString(),
-        fullName: u.full_name,
-        email: u.email,
-        phone: u.phone || "",
-        address: u.address || "",
-        image: u.image || "",
-        role: u.role,
-      }))
-    );
+    res.json(users.map(mapUser));
   } catch (e) {
     res.status(500).json({ message: "Server error" });
   }
@@ -145,5 +136,51 @@ exports.updateMe = async (req, res) => {
     res.json(mapUser(u));
   } catch (e) {
     res.status(500).json({ message: "Server error" });
+  }
+};
+
+exports.create = async (req, res) => {
+  try {
+    const { full_name, email, password, phone, address, role } = req.body;
+
+    // Check if user already exists
+    const existingUser = await User.findOne({ email });
+    if (existingUser) {
+      return res.status(400).json({
+        success: false,
+        message: "Email already exists",
+      });
+    }
+
+    // Hash password
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(password, salt);
+
+    // Create new user
+    const user = new User({
+      full_name,
+      email,
+      password: hashedPassword,
+      phone,
+      address,
+      role,
+    });
+
+    await user.save();
+
+    // Remove password from response
+    const userResponse = user.toObject();
+    delete userResponse.password;
+
+    res.status(201).json({
+      success: true,
+      data: userResponse,
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: "Error creating user",
+      error: error.message,
+    });
   }
 };
