@@ -1,0 +1,222 @@
+[
+  {
+    "_id": "3ea55af4-96a8-4458-b5fa-47ac0ae08bf2",
+    "userId": "68a205c8344038cf04d08252",
+    "items": [
+      {
+        "product_id": "68a21079344038cf04d082a8",
+        "name": "Cây móng rồng",
+        "price": 90000,
+        "quantity": 1,
+        "discount": 0,
+        "image": "/dataset/spx2-12.png"
+      }
+    ],
+    "total": 99000,
+    "status": "pending",
+    "phone": "0912345678",
+    "email": "tran.thi.binh@example.com",
+    "createdAt": "2025-08-18T08:14:46.621Z",
+    "updatedAt": "2025-08-18T08:14:46.621Z"
+  },
+  {
+    "_id": "c14ac70f-9e47-46b7-b438-62829e75504b",
+    "userId": "68a205c8344038cf04d08252",
+    "items": [
+      {
+        "product_id": "68a21091344038cf04d082b0",
+        "name": "Cây lô hội nhỏ",
+        "price": 85500,
+        "quantity": 2,
+        "discount": 5,
+        "image": "/dataset/spx2-14.png"
+      }
+    ],
+    "total": 178695,
+    "status": "pending",
+    "phone": "0912345678",
+    "email": "tran.thi.binh@example.com",
+    "createdAt": "2025-08-18T08:05:46.567Z",
+    "updatedAt": "2025-08-18T08:05:46.567Z"
+  },
+  {
+    "_id": "e83d8ceb-f87a-43e1-9d51-e2699720ce1b",
+    "userId": "68a205c8344038cf04d08252",
+    "items": [
+      {
+        "product_id": "68a2109b344038cf04d082b4",
+        "name": "Cây sen đá đỏ",
+        "price": 1200000,
+        "quantity": 1,
+        "discount": 0,
+        "image": "/dataset/spx2-15.png"
+      }
+    ],
+    "total": 1320000,
+    "status": "pending",
+    "phone": "0912345678",
+    "email": "tran.thi.binh@example.com",
+    "createdAt": "2025-08-18T07:57:51.249Z",
+    "updatedAt": "2025-08-18T07:57:51.249Z"
+  },
+  {
+    "_id": "e73ffb07-7b1c-4b9d-97ba-1c5944411c1a",
+    "userId": "68a205c8344038cf04d08252",
+    "items": [
+      {
+        "product_id": "68a21091344038cf04d082b0",
+        "name": "Cây lô hội nhỏ",
+        "price": 85500,
+        "quantity": 1,
+        "discount": 5,
+        "image": "/dataset/spx2-14.png"
+      },
+      {
+        "product_id": "68a21068344038cf04d082a4",
+        "name": "Cây ổ phụng lớn",
+        "price": 800000,
+        "quantity": 1,
+        "discount": 0,
+        "image": "/dataset/spx2-11.png"
+      }
+    ],
+    "total": 969347.5,
+    "status": "pending",
+    "phone": "0912345678",
+    "email": "tran.thi.binh@example.com",
+    "createdAt": "2025-08-18T07:55:15.172Z",
+    "updatedAt": "2025-08-18T07:55:15.172Z"
+  },
+  {
+    "_id": "0b5d96f3-1f15-4ea1-8423-a87ff78a6cc2",
+    "userId": "68a205c8344038cf04d08252",
+    "items": [
+      {
+        "product_id": "68a21091344038cf04d082b0",
+        "name": "Cây lô hội nhỏ",
+        "price": 85500,
+        "quantity": 1,
+        "discount": 5,
+        "image": "/dataset/spx2-14.png"
+      },
+      {
+        "product_id": "68a21068344038cf04d082a4",
+        "name": "Cây ổ phụng lớn",
+        "price": 800000,
+        "quantity": 1,
+        "discount": 0,
+        "image": "/dataset/spx2-11.png"
+      }
+    ],
+    "total": 969347.5,
+    "status": "pending",
+    "phone": "0912345678",
+    "email": "tran.thi.binh@example.com",
+    "createdAt": "2025-08-18T07:45:09.151Z",
+    "updatedAt": "2025-08-18T07:45:09.151Z"
+  },
+  {
+    "_id": "6b2bf1d3-0bf3-4a0b-815c-ad002be0ec7b",
+    "userId": "68a205c8344038cf04d08252",
+    "items": [
+      {
+        "product_id": "68a21091344038cf04d082b0",
+        "name": "Cây lô hội nhỏ",
+        "price": 85500,
+        "quantity": 1,
+        "discount": 5,
+        "image": "/dataset/spx2-14.png"
+      },
+      {
+        "product_id": "68a21068344038cf04d082a4",
+        "name": "Cây ổ phụng lớn",
+        "price": 800000,
+        "quantity": 1,
+        "discount": 0,
+        "image": "/dataset/spx2-11.png"
+      }
+    ],
+    "total": 969347.5,
+    "status": "pending",
+    "phone": "0912345678",
+    "email": "tran.thi.binh@example.com",
+    "createdAt": "2025-08-18T07:45:08.381Z",
+    "updatedAt": "2025-08-18T07:45:08.381Z"
+  },
+  {
+    "_id": "c57a426e-76e5-4327-80b6-939762671f91",
+    "userId": "68a205c8344038cf04d08252",
+    "items": [
+      {
+        "product_id": "68a21091344038cf04d082b0",
+        "name": "Cây lô hội nhỏ",
+        "price": 85500,
+        "quantity": 1,
+        "discount": 5,
+        "image": "/dataset/spx2-14.png"
+      },
+      {
+        "product_id": "68a21068344038cf04d082a4",
+        "name": "Cây ổ phụng lớn",
+        "price": 800000,
+        "quantity": 1,
+        "discount": 0,
+        "image": "/dataset/spx2-11.png"
+      }
+    ],
+    "total": 969347.5,
+    "status": "pending",
+    "phone": "0912345678",
+    "email": "tran.thi.binh@example.com",
+    "createdAt": "2025-08-18T07:45:06.842Z",
+    "updatedAt": "2025-08-18T07:45:06.842Z"
+  },
+  {
+    "_id": "c03f1c90-7a8b-471f-ab32-1340522ebacc",
+    "userId": "68a205c8344038cf04d08252",
+    "items": [
+      {
+        "product_id": "68a21091344038cf04d082b0",
+        "name": "Cây lô hội nhỏ",
+        "price": 85500,
+        "quantity": 1,
+        "discount": 5,
+        "image": "/dataset/spx2-14.png"
+      },
+      {
+        "product_id": "68a21068344038cf04d082a4",
+        "name": "Cây ổ phụng lớn",
+        "price": 800000,
+        "quantity": 1,
+        "discount": 0,
+        "image": "/dataset/spx2-11.png"
+      }
+    ],
+    "total": 969347.5,
+    "status": "pending",
+    "phone": "0912345678",
+    "email": "tran.thi.binh@example.com",
+    "createdAt": "2025-08-18T07:44:49.129Z",
+    "updatedAt": "2025-08-18T07:44:49.129Z"
+  },
+  {
+    "_id": "74404a76-31e5-4ef2-a45e-7260a707edc0",
+    "userId": "68a205ba344038cf04d0824f",
+    "items": [
+      {
+        "product_id": "68a2109b344038cf04d082b4",
+        "name": "Cây sen đá đỏ",
+        "price": 1200000,
+        "quantity": 1,
+        "discount": 0,
+        "image": "/dataset/spx2-15.png"
+      }
+    ],
+    "total": 1320000,
+    "status": "pending",
+    "phone": "0901234567",
+    "email": "nguyen.van.an@example.com",
+    "createdAt": "2025-08-18T02:13:04.634Z",
+    "updatedAt": "2025-08-18T02:13:04.634Z"
+  }
+]

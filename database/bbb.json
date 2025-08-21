@@ -1,0 +1,354 @@
+[
+  {
+    "id": "68a2109b344038cf04d082b4",
+    "name": "Cây sen đá đỏ",
+    "category": "",
+    "oldPrice": 1200000,
+    "price": 1200000,
+    "discount": 0,
+    "description": "Cây sen đá đỏ là một loại cây cảnh đẹp với hoa màu đỏ rực rỡ. Cây thường được trồng trong nhà hoặc ngoài trời để trang trí. Sen đá đỏ có khả năng chịu nắng tốt và dễ chăm sóc.",
+    "images": ["/dataset/spx2-15.png"],
+    "specifications": {
+      "Kích thước": "Không xác định",
+      "Màu sắc": "Đỏ, Xanh lá",
+      "Xuất xứ": "Việt Nam",
+      "Độ tuổi": "1-2 năm"
+    },
+    "rating": 0,
+    "reviewCount": 0,
+    "inStock": true,
+    "newArrival": true,
+    "newArival": true,
+    "type": ["Cây để bàn", "Cây nội thất", "Cây có hoa", "Cây nghệ thuật"]
+  },
+  {
+    "id": "68a21091344038cf04d082b0",
+    "name": "Cây lô hội nhỏ",
+    "category": "",
+    "oldPrice": 90000,
+    "price": 85500,
+    "discount": 5,
+    "description": "Cây lô hội nhỏ là một loại cây cảnh đẹp với lá màu xanh mướt. Cây thường được trồng trong nhà hoặc ngoài trời để trang trí.",
+    "images": ["/dataset/spx2-14.png"],
+    "specifications": {
+      "Kích thước": "Không xác định",
+      "Màu sắc": "Xanh lá",
+      "Xuất xứ": "Việt Nam",
+      "Độ tuổi": "1-2 năm"
+    },
+    "rating": 0,
+    "reviewCount": 0,
+    "inStock": true,
+    "newArrival": false,
+    "newArival": false,
+    "type": ["Cây để bàn", "Cây nội thất"]
+  },
+  {
+    "id": "68a21087344038cf04d082ac",
+    "name": "Cây ngọc bích",
+    "category": "",
+    "oldPrice": 700000,
+    "price": 420000,
+    "discount": 40,
+    "description": "Cây ngọc bích hay còn được gọi là cây sen đá ngọc bích, cây phỉ thúy, có tên khoa học là Crassula ovata. Là loại cây có nguồn gốc từ Nam Phi, cây ngọc bích tượng trưng cho tiền tài, sự may mắn và tài lộc. Cây ngọc bích khi sử dụng làm cảnh có tác dụng thanh lọc không khí, kích thích thị giác, mang lại không khí trong lành, tươi mới hơn cho không gian xung quanh.",
+    "images": ["/dataset/spx2-13.png"],
+    "specifications": {
+      "Kích thước": "Không xác định",
+      "Màu sắc": "Vàng",
+      "Xuất xứ": "Nam Phi",
+      "Độ tuổi": "1-2 năm"
+    },
+    "rating": 0,
+    "reviewCount": 0,
+    "inStock": true,
+    "newArrival": true,
+    "newArival": true,
+    "type": ["Cây để bàn", "Cây nội thất"]
+  },
+  {
+    "id": "68a21079344038cf04d082a8",
+    "name": "Cây móng rồng",
+    "category": "",
+    "oldPrice": 90000,
+    "price": 90000,
+    "discount": 0,
+    "description": "Là một loại cây cảnh độc đáo, mang vẻ đẹp mạnh mẽ và ấn tượng. Với những chiếc lá xanh mượt, dài và nhọn, cây Móng Rồng không chỉ tạo điểm nhấn cho không gian sống mà còn có khả năng thanh lọc không khí, đem lại sự tươi mát và trong lành. Đây là lựa chọn hoàn hảo cho những ai yêu thích sự giản đơn nhưng vẫn muốn tô điểm cho ngôi nhà hay văn phòng của mình bằng một vẻ đẹp thiên nhiên đầy sức sống.",
+    "images": ["/dataset/spx2-12.png"],
+    "specifications": {
+      "Kích thước": "Không xác định",
+      "Màu sắc": "Tím",
+      "Xuất xứ": "Việt Nam",
+      "Độ tuổi": "1-2 năm"
+    },
+    "rating": 0,
+    "reviewCount": 0,
+    "inStock": true,
+    "newArrival": false,
+    "newArival": false,
+    "type": ["Cây để bàn", "Cây nội thất", "Cây trang trí"]
+  },
+  {
+    "id": "68a21068344038cf04d082a4",
+    "name": "Cây ổ phụng lớn",
+    "category": "",
+    "oldPrice": 800000,
+    "price": 800000,
+    "discount": 0,
+    "description": "Cây Ổ Phụng là loài dương xỉ đặc biệt gây ấn tượng bởi chiếc lá lớn xòe tròn từ gốc, tạo hình như một tổ chim phượng uy nghi. Với xuất xứ từ các rừng mưa nhiệt đới Đông Nam Á như Philippines, Việt Nam hay Trung Quốc, cây thường mọc ký sinh trên thân cây già hoặc bám trên đá ẩm để hút chất dinh dưỡng tự tạo. Theo quan niệm phong thủy Châu Á, từ hình ảnh \"ổ phụng\" đã mang trong mình ý nghĩa sâu sắc về sự gắn kết gia đình, che chở và hòa khí; đồng thời biểu trưng cho sức sống kiên cường và khả năng vươn lên từ nghịch cảnh như chim phượng tái sinh từ đám tro tàn.",
+    "images": ["/dataset/spx2-11.png"],
+    "specifications": {
+      "Kích thước": "Không xác định",
+      "Màu sắc": "Xanh lá",
+      "Xuất xứ": "Đông Nam Á",
+      "Độ tuổi": "1-2 năm"
+    },
+    "rating": 0,
+    "reviewCount": 0,
+    "inStock": true,
+    "newArrival": true,
+    "newArival": true,
+    "type": ["Cây để bàn", "Cây nội thất", "Cây phong thuỷ"]
+  },
+  {
+    "id": "68a2104e344038cf04d082a0",
+    "name": "Dương xỉ Boston",
+    "category": "",
+    "oldPrice": 600000,
+    "price": 600000,
+    "discount": 0,
+    "description": "Cây dương xỉ Boston không chỉ đẹp mà còn mang lại nhiều lợi ích thiết thực. Chúng giúp thanh lọc không khí, điều hòa độ ẩm, giảm căng thẳng và cải thiện sức khỏe hô hấp. Chiết xuất từ dương xỉ còn có tác dụng chống oxy hóa, chống viêm và hỗ trợ điều trị các bệnh ngoài da. Trong Đông y, dương xỉ được dùng để chữa nhiều chứng bệnh như đau lưng, tiêu chảy, bong gân, bạch biến, và thận hư.",
+    "images": ["/dataset/spx2-10.png"],
+    "specifications": {
+      "Kích thước": "Không xác định",
+      "Màu sắc": "Xanh lá",
+      "Xuất xứ": "Việt Nam",
+      "Độ tuổi": "1-2 năm"
+    },
+    "rating": 0,
+    "reviewCount": 0,
+    "inStock": true,
+    "newArrival": true,
+    "newArival": true,
+    "type": ["Cây để bàn", "Cây nội thất", "Cây trang trí"]
+  },
+  {
+    "id": "68a21040344038cf04d0829c",
+    "name": "Dương xỉ ổ phụng (Cây ổ phụng)",
+    "category": "",
+    "oldPrice": 200000,
+    "price": 180000,
+    "discount": 10,
+    "description": "Cây Ổ Phụng là loài dương xỉ đặc biệt gây ấn tượng bởi chiếc lá lớn xòe tròn từ gốc, tạo hình như một tổ chim phượng uy nghi. Với xuất xứ từ các rừng mưa nhiệt đới Đông Nam Á như Philippines, Việt Nam hay Trung Quốc, cây thường mọc ký sinh trên thân cây già hoặc bám trên đá ẩm để hút chất dinh dưỡng tự tạo. Theo quan niệm phong thủy Châu Á, từ hình ảnh \"ổ phụng\" đã mang trong mình ý nghĩa sâu sắc về sự gắn kết gia đình, che chở và hòa khí; đồng thời biểu trưng cho sức sống kiên cường và khả năng vươn lên từ nghịch cảnh như chim phượng tái sinh từ đám tro tàn.",
+    "images": ["/dataset/spx2-9.png"],
+    "specifications": {
+      "Kích thước": "Không xác định",
+      "Màu sắc": "Xanh lá",
+      "Xuất xứ": "Đông Nam Á",
+      "Độ tuổi": "1-2 năm"
+    },
+    "rating": 0,
+    "reviewCount": 0,
+    "inStock": true,
+    "newArrival": false,
+    "newArival": false,
+    "type": ["Cây để bàn", "Cây nội thất", "Cây phong thuỷ"]
+  },
+  {
+    "id": "68a2101c344038cf04d08298",
+    "name": "Cây sen đá đất",
+    "category": "",
+    "oldPrice": 200000,
+    "price": 170000,
+    "discount": 15,
+    "description": "Sen đá đất là một loài sen đá đại diện cho sức sống bền bỉ và sự vĩnh cửu theo thời gian. Lá cây nhỏ xinh, có sự hòa trộn đặc biệt giữa màu xanh lá với màu xanh da trời mà không loài cây nào có được. Sen đá đất là cây lá nhỏ đem đến rất nhiều tác dụng rất tốt cho sức khỏe con người, chúng giúp hấp thụ các tia bức xạ có hại từ máy tính, điện thoại… Vì thế rất nhiều người ưa chuộng lựa chọn loại cây này làm cây cảnh trang trí nội thất nhà ở, văn phòng.",
+    "images": ["/dataset/spx2-8.png"],
+    "specifications": {
+      "Kích thước": "Không xác định",
+      "Màu sắc": "Xanh lá, Xanh da trời",
+      "Xuất xứ": "Việt Nam",
+      "Độ tuổi": "1-2 năm"
+    },
+    "rating": 0,
+    "reviewCount": 0,
+    "inStock": true,
+    "newArrival": false,
+    "newArival": false,
+    "type": ["Cây để bàn", "Cây nội thất", "Cây phong thuỷ"]
+  },
+  {
+    "id": "68a21010344038cf04d08294",
+    "name": "Cây xương rồng con",
+    "category": "",
+    "oldPrice": 80000,
+    "price": 80000,
+    "discount": 0,
+    "description": "Cây xương rồng con là một loại cây cảnh đẹp, thường được trồng trong nhà hoặc văn phòng. Cây có lá dài, màu xanh tươi và hoa hình chóp đặc trưng. Xương rồng con không chỉ mang lại vẻ đẹp cho không gian sống mà còn giúp thanh lọc không khí.",
+    "images": ["/dataset/spx2-7.png"],
+    "specifications": {
+      "Kích thước": "Không xác định",
+      "Màu sắc": "Xanh lá",
+      "Xuất xứ": "Việt Nam",
+      "Độ tuổi": "1-2 năm"
+    },
+    "rating": 0,
+    "reviewCount": 0,
+    "inStock": true,
+    "newArrival": true,
+    "newArival": true,
+    "type": ["Cây để bàn", "Cây nội thất"]
+  },
+  {
+    "id": "68a21002344038cf04d08290",
+    "name": "Cây dứa nhỏ",
+    "category": "",
+    "oldPrice": 100000,
+    "price": 95000,
+    "discount": 5,
+    "description": "Cây dứa nhỏ là một loại cây cảnh dễ trồng, thường được sử dụng để trang trí trong nhà. Cây có lá dài, màu xanh tươi và hoa hình chóp đặc trưng. Dứa nhỏ không chỉ mang lại vẻ đẹp cho không gian sống mà còn giúp thanh lọc không khí.",
+    "images": ["/dataset/spx2-6.png"],
+    "specifications": {
+      "Kích thước": "Không xác định",
+      "Màu sắc": "Xanh lá",
+      "Xuất xứ": "Việt Nam",
+      "Độ tuổi": "1-2 năm"
+    },
+    "rating": 0,
+    "reviewCount": 0,
+    "inStock": true,
+    "newArrival": false,
+    "newArival": false,
+    "type": ["Cây để bàn", "Cây nội thất"]
+  },
+  {
+    "id": "68a20ff5344038cf04d08288",
+    "name": "Cây Kim Ngân",
+    "category": "",
+    "oldPrice": 300000,
+    "price": 270000,
+    "discount": 10,
+    "description": "Cây Kim Ngân với lá hình trái tim, biểu tượng của tình yêu và hạnh phúc.",
+    "images": [
+      "https://res.cloudinary.com/dhmutopv5/image/upload/v1753863007/spx2-15_ymqj8l.png",
+      "https://res.cloudinary.com/dhmutopv5/image/upload/v1753863005/spx2-6_x2lkui.png",
+      "https://res.cloudinary.com/dhmutopv5/image/upload/v1753863006/spx2-13_vkjetm.png",
+      "https://res.cloudinary.com/dhmutopv5/image/upload/v1753863006/spx2-5_k8q7fm.pngr",
+      "https://res.cloudinary.com/dhmutopv5/image/upload/v1753863006/spx2-12_qdkhmk.png"
+    ],
+    "specifications": {
+      "Kích thước": "Không xác định",
+      "Màu sắc": "Xanh lá",
+      "Xuất xứ": "Việt Nam",
+      "Độ tuổi": "1-2 năm"
+    },
+    "rating": 0,
+    "reviewCount": 0,
+    "inStock": true,
+    "newArrival": false,
+    "newArival": false,
+    "type": ["Cây trang trí", "Cây phong thuỷ", "Cây nội thất"]
+  },
+  {
+    "id": "68a20fdc344038cf04d08283",
+    "name": "Cây phát tài",
+    "category": "",
+    "oldPrice": 300000,
+    "price": 270000,
+    "discount": 10,
+    "description": "Cây phát tài mang ý nghĩa phong thủy tốt, thu hút tài lộc và may mắn.",
+    "images": [
+      "https://res.cloudinary.com/dhmutopv5/image/upload/v1753863007/spx2-15_ymqj8l.png",
+      "https://res.cloudinary.com/dhmutopv5/image/upload/v1753863006/spx2-12_qdkhmk.png"
+    ],
+    "specifications": {
+      "Kích thước": "Không xác định",
+      "Màu sắc": "Xanh lá",
+      "Xuất xứ": "Việt Nam",
+      "Độ tuổi": "1-2 năm"
+    },
+    "rating": 0,
+    "reviewCount": 0,
+    "inStock": true,
+    "newArrival": true,
+    "newArival": true,
+    "type": ["Cây trang trí", "Cây phong thuỷ", "Cây nội thất"]
+  },
+  {
+    "id": "68a20fd9344038cf04d0827c",
+    "name": "Cây Hồng Môn",
+    "category": "",
+    "oldPrice": 300000,
+    "price": 270000,
+    "discount": 10,
+    "description": "Cây Hồng Môn với hoa đỏ rực rỡ, mang lại may mắn và thịnh vượng cho gia đình.",
+    "images": [
+      "https://res.cloudinary.com/dhmutopv5/image/upload/v1753863007/spx2-15_ymqj8l.png",
+      "https://res.cloudinary.com/dhmutopv5/image/upload/v1753863005/spx2-6_x2lkui.png",
+      "https://res.cloudinary.com/dhmutopv5/image/upload/v1753863006/spx2-5_k8q7fm.png",
+      "https://res.cloudinary.com/dhmutopv5/image/upload/v1753863006/spx2-12_qdkhmk.png"
+    ],
+    "specifications": {
+      "Kích thước": "Không xác định",
+      "Màu sắc": "Đỏ, Xanh lá",
+      "Xuất xứ": "Việt Nam",
+      "Độ tuổi": "1-2 năm"
+    },
+    "rating": 0,
+    "reviewCount": 0,
+    "inStock": true,
+    "newArrival": true,
+    "newArival": true,
+    "type": ["Cây trang trí", "Cây phong thuỷ", "Cây nội thất"]
+  },
+  {
+    "id": "68a20fa7344038cf04d08275",
+    "name": "Cây co Nhật",
+    "category": "",
+    "oldPrice": 300000,
+    "price": 270000,
+    "discount": 10,
+    "description": "Cây co Nhật với lá xanh tươi mát, dễ chăm sóc và phù hợp với khí hậu Việt Nam.",
+    "images": [
+      "https://res.cloudinary.com/dhmutopv5/image/upload/v1753863007/spx2-15_ymqj8l.png",
+      "https://res.cloudinary.com/dhmutopv5/image/upload/v1753863005/spx2-6_x2lkui.png",
+      "https://res.cloudinary.com/dhmutopv5/image/upload/v1753863006/spx2-13_vkjetm.png",
+      "https://res.cloudinary.com/dhmutopv5/image/upload/v1753863006/spx2-12_qdkhmk.png"
+    ],
+    "specifications": {
+      "Kích thước": "Không xác định",
+      "Màu sắc": "Xanh lá",
+      "Xuất xứ": "Việt Nam",
+      "Độ tuổi": "1-2 năm"
+    },
+    "rating": 0,
+    "reviewCount": 0,
+    "inStock": true,
+    "newArrival": true,
+    "newArival": true,
+    "type": ["Cây trang trí", "Cây phong thuỷ", "Cây nội thất"]
+  },
+  {
+    "id": "68a20dd2344038cf04d08270",
+    "name": "Cây Dạ Lam",
+    "category": "",
+    "oldPrice": 5000000,
+    "price": 4500000,
+    "discount": 10,
+    "description": "Cây này thích hợp loại thực, tháo ướt nhẹ mất lẫy, cây loại không tên để 0.8-1.2m. Là hoa bông xinh xắn...",
+    "images": [
+      "https://res.cloudinary.com/dhmutopv5/image/upload/v1753863007/spx2-15_ymqj8l.png",
+      "https://res.cloudinary.com/dhmutopv5/image/upload/v1753863005/spx2-6_x2lkui.png"
+    ],
+    "specifications": {
+      "Kích thước": "0.8-1.2m",
+      "Màu sắc": "Xanh lá",
+      "Xuất xứ": "Việt Nam",
+      "Độ tuổi": "2-3 năm"
+    },
+    "rating": 0,
+    "reviewCount": 0,
+    "inStock": true,
+    "newArrival": true,
+    "newArival": true,
+    "type": ["Cây trang trí", "Cây phong thuỷ", "Cây nội thất"]
+  }
+]

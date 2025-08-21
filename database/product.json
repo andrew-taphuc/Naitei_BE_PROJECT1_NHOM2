@@ -1,0 +1,21 @@
+{
+    "id": "68a21091344038cf04d082b0",
+    "name": "Cây lô hội nhỏ",
+    "category": "",
+    "oldPrice": 90000,
+    "price": 85500,
+    "discount": 5,
+    "description": "Cây lô hội nhỏ là một loại cây cảnh đẹp với lá màu xanh mướt. Cây thường được trồng trong nhà hoặc ngoài trời để trang trí.",
+    "images": ["/dataset/spx2-14.png"],
+    "specifications": {
+      "Kích thước": "Không xác định",
+      "Màu sắc": "Xanh lá",
+      "Xuất xứ": "Việt Nam",
+      "Độ tuổi": "1-2 năm"
+    },
+    "rating": 0,
+    "reviewCount": 0,
+    "inStock": true,
+    "newArrival": false,
+    "type": ["Cây để bàn", "Cây nội thất"]
+  }
