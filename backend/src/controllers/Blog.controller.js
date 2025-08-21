@@ -293,7 +293,8 @@ exports.addBlogComment = async (req, res) => {
 exports.getBlogCategories = async (req, res) => {
   try {
     const categories = await Category.find({ type: "blog" });
-    res.json(categories);
+    const mappedCategories = categories.map(mapCategoryToJSONServerFormat);
+    res.json(mappedCategories);
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
