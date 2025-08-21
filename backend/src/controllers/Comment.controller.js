@@ -11,10 +11,13 @@ const mapCommentToJSONServerFormat = (comment) => {
         : comment.blog_id
     ),
     userId:
-      typeof comment.user_id === "object"
-        ? comment.user_id._id.toString()
-        : comment.user_id.toString(),
+      comment.user_id && typeof comment.user_id === "object"
+        ? comment.user_id._id?.toString() || ""
+        : comment.user_id
+        ? comment.user_id.toString()
+        : "",
     userName:
+      comment.user_id &&
       typeof comment.user_id === "object" &&
       (comment.user_id.full_name || comment.user_id.fullName)
         ? comment.user_id.full_name || comment.user_id.fullName
