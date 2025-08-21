@@ -1,4 +1,6 @@
-const { Order, User, Product } = require('../models'); 
+
+const { Order, User, Product } = require('../models');
+
 const { v4: uuidv4 } = require('uuid'); 
 
 // Tạo 1 đơn hàng mới từ user
@@ -10,7 +12,7 @@ const createOrder = async (req, res) => {
       payment_method,
       shipping_address,
       phone,
-      email 
+      email
     } = req.body;
 
     // Kiểm tra xem người dùng có tồn tại không
@@ -67,6 +69,7 @@ const createOrder = async (req, res) => {
         quantity: item.quantity,
         discount: itemDiscount,
         image: item.image || item.image || (product.images?.[0]?.url || '')
+
       });
     }
 
@@ -274,7 +277,7 @@ const getOrderById = async (req, res) => {
         const { userId } = req.params;
 
         // Tìm tất cả đơn hàng của người dùng
-        const orders = await Order.find({ user_id: userId })
+        const orders = await Order.find({ __id: userId })
             .populate('user_id', 'full_name email phone')
             .sort({ createdAt: -1 }); // Sắp xếp theo ngày tạo mới nhất
 
@@ -285,6 +288,7 @@ const getOrderById = async (req, res) => {
             });
         }
 
+        
         return res.status(200).json({
             success: true,
             data: orders
