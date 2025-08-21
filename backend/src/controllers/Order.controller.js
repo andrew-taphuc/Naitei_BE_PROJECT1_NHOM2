@@ -96,7 +96,7 @@ const createOrder = async (req, res) => {
       message: 'Order created successfully',
       data: {
         id: order._id,
-        userId: order.user_id,
+        userId: String(order.user_id),
         items: order.items,
         total: order.total,
         status: order.status,
@@ -167,7 +167,19 @@ const updateOrder = async (req, res) => {
         return res.status(200).json({
             success: true,
             message: 'Order updated successfully',
-            data: updatedOrder
+            data: {
+                id: updatedOrder._id,
+                userId: String(updatedOrder.user_id?._id || updatedOrder.user_id),
+                items: updatedOrder.items,
+                total: updatedOrder.total,
+                status: updatedOrder.status,
+                paymentMethod: updatedOrder.paymentMethod,
+                shippingAddress: updatedOrder.shippingAddress,
+                phone: updatedOrder.phone,
+                email: updatedOrder.email,
+                createdAt: updatedOrder.createdAt,
+                updatedAt: updatedOrder.updatedAt
+            }
         });
 
     } catch (error) {
@@ -259,7 +271,19 @@ const updateOrderStatus = async (req, res) => {
         return res.status(200).json({
             success: true,
             message: 'Order status updated successfully',
-            data: updatedOrder
+            data: {
+                id: updatedOrder._id,
+                userId: String(updatedOrder.user_id?._id || updatedOrder.user_id),
+                items: updatedOrder.items,
+                total: updatedOrder.total,
+                status: updatedOrder.status,
+                paymentMethod: updatedOrder.paymentMethod,
+                shippingAddress: updatedOrder.shippingAddress,
+                phone: updatedOrder.phone,
+                email: updatedOrder.email,
+                createdAt: updatedOrder.createdAt,
+                updatedAt: updatedOrder.updatedAt
+            }
         });
 
     } catch (error) {
@@ -277,7 +301,7 @@ const getOrderById = async (req, res) => {
         const { userId } = req.params;
 
         // Tìm tất cả đơn hàng của người dùng
-        const orders = await Order.find({ __id: userId })
+    const orders = await Order.find({ user_id: userId })
             .populate('user_id', 'full_name email phone')
             .sort({ createdAt: -1 }); // Sắp xếp theo ngày tạo mới nhất
 
@@ -291,7 +315,19 @@ const getOrderById = async (req, res) => {
         
         return res.status(200).json({
             success: true,
-            data: orders
+            data: orders.map(order => ({
+                _id: order._id,
+                userId: String(order.user_id?._id || order.user_id),
+                items: order.items,
+                total: order.total,
+                status: order.status,
+                paymentMethod: order.paymentMethod,
+                shippingAddress: order.shippingAddress,
+                phone: order.phone,
+                email: order.email,
+                createdAt: order.createdAt,
+                updatedAt: order.updatedAt
+            }))
         });
 
     } catch (error) {
@@ -309,19 +345,19 @@ const getAllOrders = async (req, res) => {
         const orders = await Order.find()
             .populate('user_id', 'full_name email phone')
             .sort({ createdAt: -1 }); // Sắp xếp theo ngày tạo mới 
-        return res.status(200).json(orders.map(o => ({
-          id: o._id,
-          userId: String(o.user_id),
-          items: o.items,
-          total: o.total,
-          status: o.status,
-          paymentMethod: o.payment_method,
-          shippingAddress: o.shipping_address,
-          phone: o.phone,
-          email: o.email,
-          createdAt: o.createdAt,
-          updatedAt: o.updatedAt
-        })));
+                return res.status(200).json(orders.map(o => ({
+                    _id: o._id,
+                    userId: String(o.user_id?._id || o.user_id),
+                    items: o.items,
+                    total: o.total,
+                    status: o.status,
+                    paymentMethod: o.paymentMethod,
+                    shippingAddress: o.shippingAddress,
+                    phone: o.phone,
+                    email: o.email,
+                    createdAt: o.createdAt,
+                    updatedAt: o.updatedAt
+                })));
     } catch (error) {
         console.error('Error fetching all orders:', error);
         return res.status(500).json({

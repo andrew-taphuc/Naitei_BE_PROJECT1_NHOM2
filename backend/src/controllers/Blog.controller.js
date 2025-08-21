@@ -47,7 +47,7 @@ exports.getAllBlogs = async (req, res) => {
           description: blog.description,
           contents: blog.contents,
           images: blog.images,
-          categories: blog.categories.map((cat) => objectIdToInt(cat._id)),
+          categories: blog.categories.map((cat) => cat._id.toString()),
           tags: blog.tags
             .map((tagName) => getTagIdByName(tagName))
             .filter((id) => id !== null),
