@@ -1,10 +1,11 @@
 const express = require('express');
-const { list, getOne, bestSellers, promotions, newArrival, categories, create, update, remove } = require('../controllers/Product.controller');
+const { list, getOne, bestSellers, promotions, newArrival, categories, create, update, remove, search } = require('../controllers/Product.controller');
 const { authMiddleware, requireAdmin } = require('../utils/jwt');
 const router = express.Router();
 
 router.post('/', create);
 router.get('/', list);
+router.get('/search', search);  // API search chuyên dụng
 router.get('/_bestSellers/list', bestSellers);
 router.get('/_promotions/list', promotions);
 router.get('/_newArrival/list', newArrival);

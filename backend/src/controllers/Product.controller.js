@@ -77,16 +77,16 @@ exports.create = async (req, res) => {
 
 exports.list = async (req, res) => {
   try {
-    const { category, q, _limit, page } = req.query;
+    const { category, _limit, page } = req.query;
     const filter = {};
     let categoryName = '';
+    
     if (category) {
       const cat = await Category.findOne({ name: new RegExp(`^${category}$`, 'i') }).select('_id name');
       if (!cat) return res.json([]);
       filter.category_id = cat._id;
       categoryName = cat.name;
     }
-    if (q) filter.name = { $regex: q, $options: 'i' };
 
     const limit = Number(_limit) || 20;
     const skip = Math.max(0, (Number(page) - 1) * limit || 0);
@@ -210,6 +210,98 @@ exports.update = async (req, res) => {
   } catch (e) {
     console.error('Update product error', e);
     return res.status(500).json({ message: 'Server error' });
+  }
+};
+
+exports.search = async (req, res) => {
+  try {
+    const { q, category, minPrice, maxPrice, inStock, newArrival, _limit, page } = req.query;
+    
+    if (!q || !q.trim()) {
+      return res.status(400).json({ message: 'Search query is required' });
+    }
+
+    const filter = {};
+    let categoryName = '';
+
+    // Text search - tìm kiếm trong name, description, và tags
+    const searchTerms = q.trim().split(' ').filter(term => term.length > 0);
+    
+    if (searchTerms.length > 0) {
+      // Tạo điều kiện: TẤT CẢ terms phải match trong ít nhất 1 field
+      const fieldConditions = [];
+      
+      // Kiểm tra từng field (name, description, tags) có chứa TẤT CẢ search terms không
+      ['name', 'description', 'tags'].forEach(field => {
+        const fieldAndConditions = searchTerms.map(term => ({
+          [field]: { $regex: term, $options: 'i' }
+        }));
+        
+        fieldConditions.push({
+          $and: fieldAndConditions
+        });
+      });
+      
+      // Ít nhất 1 field phải match tất cả terms
+      filter.$or = fieldConditions;
+    }
+
+    // Category filter
+    if (category) {
+      const cat = await Category.findOne({ name: new RegExp(`^${category}$`, 'i') }).select('_id name');
+      if (cat) {
+        filter.category_id = cat._id;
+        categoryName = cat.name;
+      }
+    }
+
+    // Price range filter
+    if (minPrice || maxPrice) {
+      filter.current_price = {};
+      if (minPrice) filter.current_price.$gte = Number(minPrice);
+      if (maxPrice) filter.current_price.$lte = Number(maxPrice);
+    }
+
+    // Stock filter
+    if (inStock !== undefined) {
+      filter.in_stock = inStock === 'true';
+    }
+
+    // New arrival filter
+    if (newArrival !== undefined) {
+      filter.new_arrival = newArrival === 'true';
+    }
+
+    const limit = Number(_limit) || 50;
+    const skip = Math.max(0, (Number(page) - 1) * limit || 0);
+
+    // Execute search with sorting by relevance (name match first, then rating)
+    const items = await Product.find(filter)
+      .sort({ 
+        // Prioritize name matches
+        name: 1,
+        rating: -1, 
+        review_count: -1 
+      })
+      .skip(skip)
+      .limit(limit);
+
+    // Get total count for pagination
+    const total = await Product.countDocuments(filter);
+
+    res.json({
+      products: items.map(p => mapProduct(p, categoryName)),
+      pagination: {
+        total,
+        page: Number(page) || 1,
+        limit,
+        totalPages: Math.ceil(total / limit)
+      },
+      searchQuery: q
+    });
+  } catch (e) {
+    console.error('Search products error', e);
+    res.status(500).json({ message: 'Server error' });
   }
 };
 
