@@ -7,7 +7,7 @@ const reviewRoutes = require("./reviews.routes");
 const categoryRoutes = require("./categories.routes");
 const wishlistRoutes = require("./wishlist.routes");
 const userRoutes = require("./users.routes");
-const bannerRoutes = require("./banner.routes");
+const bannerRoutes = require("./Banner.routes");
 const {
   bestSellers,
   promotions,

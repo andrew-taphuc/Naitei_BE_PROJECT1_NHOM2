@@ -30,8 +30,8 @@ exports.getAllBlogs = async (req, res) => {
         const transformedComments = comments.map((comment) => ({
           id: objectIdToInt(comment._id),
           blogId: objectIdToInt(comment.blog_id),
-          userId: objectIdToInt(comment.user_id._id),
-          userName: comment.user_id.full_name,
+          userId: comment.user_id ? objectIdToInt(comment.user_id._id) : null,
+          userName: comment.user_id?.full_name || "Anonymous",
           content: comment.content,
           date: comment.created_at
             ? new Date(comment.created_at).toLocaleDateString("vi-VN")
