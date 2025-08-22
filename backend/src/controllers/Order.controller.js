@@ -51,15 +51,11 @@ const createOrder = async (req, res) => {
         return res.status(404).json({ 
           message: `Product with ID ${item.product_id} not found` 
         });
-      }
-
-      // Tính giá sau discount cho item này
-      const itemDiscount = item.discount || 0;
-      const discountedPrice = item.price * (1 - itemDiscount / 100);
+      }      
 
       // Tính subtotal cho item này
-      const itemSubtotal = discountedPrice * item.quantity;
-      subtotal += itemSubtotal;
+
+      subtotal += item.price * item.quantity;
 
       // Thêm vào processed items với thông tin đầy đủ
       processedItems.push({
@@ -67,7 +63,7 @@ const createOrder = async (req, res) => {
         name: item.name || product.name,
         price: item.price, // Giá gốc
         quantity: item.quantity,
-        discount: itemDiscount,
+        discount: item.discount,
         image: item.image || item.image || (product.images?.[0]?.url || '')
 
       });
@@ -85,8 +81,8 @@ const createOrder = async (req, res) => {
       items: processedItems,
       total: Math.round(totalWithVAT * 100) / 100, // Total đã bao gồm VAT
       status: 'pending',
-      payment_method: payment_method || '',
-      shipping_address: shipping_address || '',
+      payment_method: payment_method,
+      shipping_address: shipping_address,
       phone: phone || '',
       email: email || ''
     });
@@ -321,8 +317,8 @@ const getOrderById = async (req, res) => {
                 items: order.items,
                 total: order.total,
                 status: order.status,
-                payment_method: o.payment_method,
-                shipping_address: o.shipping_address,
+                payment_method: order.payment_method,
+                shipping_address: order.shipping_address,
                 phone: order.phone,
                 email: order.email,
                 createdAt: order.createdAt,
