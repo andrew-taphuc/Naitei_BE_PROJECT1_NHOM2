@@ -86,12 +86,13 @@ exports.getOne = async (req, res) => {
 
 exports.update = async (req, res) => {
   try {
-    const { fullName, phone, address, image } = req.body || {};
+    const { full_name, phone, address, image , role} = req.body || {};
     const updateDoc = {};
-    if (fullName !== undefined) updateDoc.full_name = fullName;
+    if (full_name !== undefined) updateDoc.full_name = full_name;
     if (phone !== undefined) updateDoc.phone = phone;
     if (address !== undefined) updateDoc.address = address;
     if (image !== undefined) updateDoc.image = image;
+    if (role !== undefined) updateDoc.role = role;
 
     const u = await User.findByIdAndUpdate(
       req.params.id,
@@ -183,4 +184,33 @@ exports.create = async (req, res) => {
       error: error.message,
     });
   }
+};
+
+exports.remove = async (req, res) => {
+    try {
+        const userId = req.params.id;
+
+        // Check if user exists
+        const user = await User.findById(userId);
+        if (!user) {
+            return res.status(404).json({
+                success: false,
+                message: 'Product not found'
+            });
+        }
+
+        // Delete the user
+        await User.findByIdAndDelete(userId);
+
+        res.json({
+            success: true,
+            message: 'User deleted successfully'
+        });
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            message: 'Error deleting user',
+            error: error.message
+        });
+    }
 };
